@@ -9,6 +9,19 @@ public class ByteBufferTest {
 
     public static void main(String[] args) {
 
+        ByteBuffer myBuffer = ByteBuffer.allocate(1024);
+        myBuffer.put((byte) 'a');
+        myBuffer.put((byte) 'b');
+
+        //开始读
+        myBuffer.flip();
+
+        int len = myBuffer.remaining();
+        byte[] arr = new byte[len];
+
+        myBuffer.get(arr,0,len);
+
+
         System.out.println("----------Test allocate--------");
         System.out.println("before alocate:"
                 + Runtime.getRuntime().freeMemory());
