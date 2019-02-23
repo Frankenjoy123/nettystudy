@@ -52,6 +52,7 @@ public class ServiceSocketChannelDemo {
                 ssc.bind(localAddress, 100);
                  
                 /*服务器通道只能对tcp链接事件感兴趣*/
+                //ssc 注册到 selector
                 ssc.register(selector, SelectionKey.OP_ACCEPT);
                  
             } catch (IOException e1) {
