@@ -20,7 +20,7 @@ public class FileChannelDemo {
         try {
              
             /*如果文件不存在，创建该文件,文件后缀是不是文本文件不重要*/
-            File file = new File("f:/noi_utf8.data");
+            File file = new File("/Users/zhouxiaowu/noi_utf8.data");
             if(!file.exists()){
                 file.createNewFile();
             }
@@ -65,7 +65,7 @@ public class FileChannelDemo {
         try {
              
             /*通过Path对象创建文件通道*/
-            Path path = Paths.get("f:/noi_utf8.data");
+            Path path = Paths.get("/Users/zhouxiaowu/noi_utf8.data");
             FileChannel fc = FileChannel.open(path);
              
             ByteBuffer bb = ByteBuffer.allocate((int) fc.size()+1);

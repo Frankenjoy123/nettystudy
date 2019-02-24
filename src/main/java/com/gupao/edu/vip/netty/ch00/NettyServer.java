@@ -37,6 +37,16 @@ public class NettyServer  {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(bossGroup,workGroup)
                 .channel(NioServerSocketChannel.class)
+
+
+
+                //对服务端的处理
+                .handler(new ChannelInboundHandlerAdapter())
+
+//                .childOption()
+//                .childAttr()
+
+                //对连接的client的处理
                 .childHandler(new ChannelInitializer<Channel>() {
 
 
