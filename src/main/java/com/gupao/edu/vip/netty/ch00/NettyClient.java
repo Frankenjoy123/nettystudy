@@ -32,11 +32,13 @@ public class NettyClient implements Runnable {
                         }
                     });
 
-                for (int i=0;i<10;i++){
-                    ChannelFuture f = bootstrap.connect("127.0.0.1",6666).sync();
-                    f.channel().writeAndFlush("hello service !" + Thread.currentThread().getName()+ ":---->"+i);
-                    f.channel().closeFuture().sync();
-                }
+
+
+            for (int i=0;i<10;i++){
+                ChannelFuture f = bootstrap.connect("127.0.0.1",6666).sync();
+                f.channel().writeAndFlush("hello service !" + Thread.currentThread().getName()+ ":---->"+i);
+                f.channel().closeFuture().sync();
+            }
 
 
         }catch (Exception e){

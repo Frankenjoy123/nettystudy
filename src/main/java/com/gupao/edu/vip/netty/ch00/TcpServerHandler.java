@@ -14,6 +14,7 @@ public class TcpServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("server receive message:" + msg);
+//        ctx.channel().writeAndFlush()
         ctx.channel().writeAndFlush("accept message "+ msg);
         ctx.close();
     }
